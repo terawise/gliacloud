@@ -1,0 +1,22 @@
+Quiz 1-2
+1. The F1 Score is the 2*((precision*recall)/(precision+recall)). The F1 score conveys the balance between the precision and the recall.
+2. The role of activation functions is make neural networks non-linear.
+3. Bias are the simplifying assumptions made by a model to make the target function easier to learn. Variance is the amount that the estimate of the target function will change if different training data was used.
+4. Some of the potential over-fitting that might happen in a single tree (which is a reason you do pruning generally) is mitigated by two things in a Random Forest: a). The fact that the samples used to train the individual trees are "bootstrapped". b). The fact that you have a multitude of random trees using random features and thus the individual trees are strong but not so correlated with each other.
+5. One-hot encoding is often used for indicating the state of a state machine. When using binary or Gray code, a decoder is needed to determine the state. A one-hot state machine, however, does not need a decoder as the state machine is in the nth state if and only if the nth bit is high.
+
+Binary	Gray code	One-hot
+000	000		00000001
+001	001		00000010
+010	011		00000100
+011	010		00001000
+100	110		00010000
+101	111		00100000
+110	101		01000000
+111	100		10000000
+
+6. Regularization modifies the objective function that we minimize by adding additional terms that penalize large weights. The most common type of regularization is L2 regularization. It can be implemented by augmenting the error function with the squared magnitude of all weights in the neural network.Another common type of regularization is L1 regularization. Here, we add the term £f|w| for every weight win the neural network.In comparison, weight vectors from L2 regularization are usually diffuse, small numbers. L1 regularization is very useful when you want to understand exactly which features are contributing to a decision. If this level of feature analysis isn't necessary, we prefer to use L2 regularization because it empirically performs better.
+
+Max norm constraints have a similar goal of attempting to restrict from £c becoming too large, but they do this more directly. Max norm constraints enforce an absolute upper bound on the magnitude of the incoming weight vector for every neuron and use projected gradient descent to enforce the constraint.
+
+Dropout is a very different kind of method for preventing overfitting that can often be used in lieu of other techniques. While training, dropout is implemented by only keeping a neuron active with some probability p (a hyperparameter), or setting it to zero otherwise. Intuitively, this forces the network to be accurate even in the absence of certain information. It prevents the network from becoming too dependent on any one (or any small combination) of neurons.
